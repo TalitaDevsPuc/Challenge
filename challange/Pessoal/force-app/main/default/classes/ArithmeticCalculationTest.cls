@@ -1,3 +1,7 @@
+/**
+* @description: Classe de teste da classe ArithmeticCalculation
+**/
+
 @isTest
 private class ArithmeticCalculationTest {
     @isTest

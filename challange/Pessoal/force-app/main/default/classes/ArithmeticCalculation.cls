@@ -1,3 +1,8 @@
+/**
+* @description: Classe para realizar cálculos aritméticos
+* @testClass: ArithmeticCalculationTest
+**/
+
 public class ArithmeticCalculation {
     public Decimal doSum(Decimal numberOne, Decimal numberTwo){
         return numberOne + numberTwo;
