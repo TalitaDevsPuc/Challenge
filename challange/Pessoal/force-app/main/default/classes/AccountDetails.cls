@@ -1,8 +1,8 @@
-/*** @description: Classe para atualizar campo descrição de contas do tipo indústria: industry
+/*** @description: Classe para atualizar campo descrição de contas do tipo indústria: Energy
 * @testClass: AccountDetailsTest
 **/
 
-public class AccountDetails(){
+public class AccountDetails{
     
         for (Account energy : [
                                 SELECT Id, 
@@ -11,10 +11,10 @@ public class AccountDetails(){
                                 FROM Account 
                                 WHERE Industry =: 'Energy'
                             ])
-            AccoutModel model = new Territory2Model (
+            AccoutModel model = new AccoutModel (
             Description = 'Desafio Completo',
-        );
-        update model;
+            );
+            update model;
 
 }
 
