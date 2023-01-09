@@ -6,22 +6,27 @@ private class UpdateAccountFieldTest {
     
     @TestSetup
     private static void setup(){
-        Account conta = new Account();
-        conta.Name = 'Test description';
-        conta.Industry = 'Energy';
-        conta.Email__c = 'teste@classeteste.com';
 
-        insert conta;
+        Account account = new Account(
+        Name = 'Test description',
+        Industry = 'Energy',
+        Email__c = 'teste@classeteste.com'
+        );
+
+        insert account;
     }
 
     @isTest
     private static void updateAccountField(){
-        Account conta  = [SELECT Id, Description FROM Account];
-        List<Account> listAccount = new List<Account>();
-        listAccount.add(conta);
 
         Test.startTest();
-            UpdateAccountField.updateAccount(listAccount);
+            UpdateAccountField.updateAccount(new List<Account>
+            ([SELECT Id, Description FROM Account LIMIT 1]));
         Test.stopTest();
+
+        System.AssertEquals('Energy',[SELECT Industry FROM Account LIMIT 1].Industry);
+
     }
 }
+
+
