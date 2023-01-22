@@ -10,7 +10,7 @@ private class UpdateAccountFieldTest {
         Account account = new Account(
         Name = 'Test description',
         Industry = 'Energy',
-        Email__c = 'teste@classeteste.com'
+        Email__c = 'classteste@classeteste.com'
         );
 
         insert account;
@@ -20,13 +20,13 @@ private class UpdateAccountFieldTest {
     private static void updateAccountField(){
 
         Test.startTest();
-            UpdateAccountField.updateAccount(new List<Account>
-            ([SELECT Id, Description FROM Account LIMIT 1]));
+            UpdateAccountField.updateAccount();
         Test.stopTest();
 
-        System.AssertEquals('Energy',[SELECT Industry FROM Account LIMIT 1].Industry);
+        System.AssertEquals('Desafio Completo',[SELECT Description FROM Account LIMIT 1].Description);
 
     }
+
 }
 
 

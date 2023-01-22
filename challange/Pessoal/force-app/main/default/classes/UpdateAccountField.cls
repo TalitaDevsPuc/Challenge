@@ -4,8 +4,12 @@
 
 public class UpdateAccountField {
 
-    public static void updateAccount(List<Account> acctsList) {
+    @future(callout=true)
+
+    public static void updateAccount() {
+
         Account[] acctsListQuery = [SELECT Id FROM Account WHERE Industry = 'Energy'];
+        
         for (Account a : acctsListQuery) {
             a.Description = 'Desafio Completo';
         }
